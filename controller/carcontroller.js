@@ -488,7 +488,7 @@ const data= await Car.find({ report:{$eq:3}})
 }
 
 catch (err) {
-    res.json(err);
+    res.json(err)
 }
 
 }  

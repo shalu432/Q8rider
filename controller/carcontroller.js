@@ -439,42 +439,42 @@ const getBlockedPost= async(req,res)=>{
 
 const data= await Car.find({ report:{$eq:3}})
 
-    // data.forEach(el=>{
-    //     {   console.log(result);
-    //         Car.findByIdAndUpdate(ObjectId(req.user),{
-    //             $set:{
-    //                         postType:"blocked post"
-    //                        }
-    //                    },{ new: true, runValidators: true })
-    //                    .then((result)=>{
+    data.forEach(el=>{
+        {   console.log(result);
+            Car.findByIdAndUpdate(ObjectId(req.user),{
+                $set:{
+                            postType:"blocked post"
+                           }
+                       },{ new: true, runValidators: true })
+                       .then((result)=>{
                         
-    //                     res.json({
-    //                         status:"true",
-    //                         code:"200",
-    //                         response:result
-    //                     })
-    //                    })
-    //             }
-    // })
+                        res.json({
+                            status:"true",
+                            code:"200",
+                            response:result
+                        })
+                       })
+                }
+    })
    
-    //         }
+            
         
-    // }
+    
     
 
-.forEach(function(doc){
-    console.log({ _id: doc._id });
-     Car.updateMany({ _id: doc._id }, {$set:{
-        postType:"blocked post"
-       }})
-}) 
-.then((data1)=>{
-    res.json({
-        status:"true",
-        code:"200",
-        response:data1
-    })
-})
+// .forEach(function(doc){
+//     console.log({ _id: doc._id });
+//      Car.updateMany({ _id: doc._id }, {$set:{
+//         postType:"blocked post"
+//        }})
+// }) 
+// .then((data1)=>{
+//     res.json({
+//         status:"true",
+//         code:"200",
+//         response:data1
+//     })
+// })
 .catch(error=>{
     res.json({
         status:"false",
